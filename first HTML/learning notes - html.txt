@@ -1,0 +1,48 @@
+<h1><h1>    is largest and most important heading, should only ever have 1
+then use h2,h3,h4,h5,h6 - they get smaller as you go through 1-6
+doesnt affect your code, but important for structure and organising your site
+
+html entities make it so you can type special characters without it being misread as code
+simply search up html entities to grab whatever symbol you need
+
+when using hyperlinks <a href="location and name of site">text that will be hyperlinked</a> , if they are in the same folder
+simply use "sitename.html", if it is in another folder state the folder too so "dummyfolder/sitename.html"
+- images can also be hyperlinked simply replace what would have been the text with your image syntax instead
+
+For getting free photos, and videos with audio, use unsplashed.com and sketch.com respectively or pexels.com for both
+
+some browsers may not be compatible with video elements, use caniuse.com to check what browsers(and their version) are compatible
+
+divs/containers are a great way to organise chunks of elements of your website to kepp things structured, easy
+to read and generally clean for a user
+
+<span> is useless on its own, but works great when you need to apply a change to something thats in the middle of other
+things. for example highlighting specific words in a paragraph of text.
+- you would use span in combination with a class or other global elements to make it serve a function
+
+semantic elements: 
+- a more organised way to contain certain things, these are better identified by a search engine and make your code
+easier to return to as it is more descriptive
+
+<article> - used to contain a piece of written text like an article, this can contain anything such as a header, paragraph
+, images etc. it is simply better practice to use over <div>
+
+<figure> - same as article, but for images. this also allows you to add a <figcaption> either above or below your chosen
+image/video. 
+
+<time> - same as the above, but for time. for more accuracy you can add a datetime="" which is machine readable
+and once again better understood by a search engine.
+
+structure:
+
+<header> - used for <nav> navigation bars typically or other immediately useful code
+
+<main> - used to contain the main chunk of the content within your website, although you should only use 1 of 
+these, there's no reason not to have multiple <section> containing multiple <article> etc etc
+
+<section> - usually used to group relevant content together
+
+<footer> - same use as a header, however at the bottom of the page
+
+<aside> - used to contain bits of unrelevant content or miscellaneous items
+

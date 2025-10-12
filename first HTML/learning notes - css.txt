@@ -1,0 +1,156 @@
+styles:
+
+- its cleaner to try and keep multi purpose styles on a seperate .css file. you can then use the <link> entity to call onto
+that file, note that <link> is self closing 
+- <link> styling has the least priority over other style entities so keep it for general use
+
+- for something specific, provide an id="" to seperate styles and maintain clean code
+-these must be unique and 2 elements cannot share the same id
+- these have priorty over <link> but remember all changes made with <link> must be addressed or it will use that 
+(for example if text is bold and you dont change it back, it would be your chosen new color, but bold because you didnt change it)
+
+- you can use style="" and it will work in a similar way to id="", however its considered messy as the individual
+line can get too long quickly. try to avoid where possible but option is there
+_________________________________________________________________________________________________________________________________
+
+-Always use normalize.css in work to ensure html will look the same across different browsers, just copy and paste the 
+program from the "HTML + CSS" file
+- remember to <link> normalize.css in each html using styling
+
+_________________________________________________________________________________________________________________________________
+
+Selectors:
+
+Type - for example the body of the site
+
+id - the unique id of an element
+
+class - the general label given to a group of chosen elements
+
+pseudo Selectors:
+
+- used to specify an element in an order of choice
+for example:
+- first-child - the first element within the container
+- last-child - vice versa of the above
+- nth-child() - a chosen pattern to select elements eg odd, every 3rd etc etc
+
+- pseudo selectors are addressed using :
+for example:
+
+article :first-child {} - this will choose the first element within the article
+
+or:
+
+ul li :nth-child(odd) - this will choose every odd list item within the unordered list
+
+For links:
+
+a:link - for an unvisited link
+a:visited - for an already visited link
+a:focus AND a:hover - for hovering/selecting over something, always use focus with hover so it caters for mouse AND keyboard
+users
+
+pseudo element selectors:
+
+-used to select something within an element rather than the whole elemant as shown above
+
+these are addressed using ::
+for example:
+
+p::first-letter - will select the first letter of paragraphs
+-same system of last letter and nth letter just like the above
+
+p::first-line - will select the entire first line of the element
+
+::selection - will change visuals for when you highlight over things using your mouse/keyboard (like as if you're going
+to copy and paste something)
+
+p::before { content:"" } - will insert thing of your choice before every paragraph
+- using {display: } will determine how it interacts with the thing before it, for example block will use the whole line 
+for the content you chose to go before
+
+::after { content:"" } - same idea as before, but will place content after instead
+_________________________________________________________________________________________________________________________________
+
+Inheritance:
+
+- if you have a class within an element, and make style changes to the element, then the content with a class will 
+also inherit the changes 
+For example:
+p {
+    color: blue;
+}
+.highlight {
+    background: red;
+}
+if text inside the paragraph with a class of "highlight" then that word or phrase will have a red background,
+BUT will also have blue text
+
+.highlight {
+    color: initial;
+}
+
+Here the highlighted text will have a red backgroud but remain its origional colour, NOT inheriting the blue
+- you can use inherit; to specifically inherit something from the element such as borders as an example
+_________________________________________________________________________________________________________________________________
+
+Colours:
+
+3 systems but 2 suit me personally the best:
+
+HSL hsl(38, 40% 39%) - this system is better to use when you want to tweak the color easily or use it elswhere but 
+at a different shade for example
+
+RGB(a) rgba(250 30 25 0.5) - this is better if im happy with the colour and am not gonna need an exactly similar
+shade, the code can just look a little cleaner
+
+-both systems allows the opacity to be change (a value between 0 and 1)
+
+-search up color picker on google to see and experiment with colors, it'll give you a HSL and RGB value 
+_________________________________________________________________________________________________________________________________
+
+Gradients:
+
+two types of gradient, linear or radial
+Examples:
+
+background: linear-gradient(red, black)
+- this will by default display top(first color) to bottom (second color)
+- can adjust position by inserting "to left" eg:
+background: linear-gradient(to top left, red, black)
+
+background: radial-gradient(45deg, pink, yellow)
+- degrees will change the ratio of color (works for both gradient types)
+- can also have position changed as above
+- if oval is created due to rectangular background, you can specify (circle, pink, yellow)
+
+use cssgradient.io for seeing and creating gradients as it is awkward to use trial and error 
+_________________________________________________________________________________________________________________________________
+
+Borders and shapes:
+
+Example:
+border: 10px, dotted, red;
+-10px is the width
+-dotted can be dashed or solid by choice
+-red is color obv
+-you are able to specify each side of the border if you need to customize specific edges and reads:
+top, right, bottom, left 
+num, num, num, num
+- border-radius is used to smooth out the edges, set to 100% for a circle
+
+to make shapes, use "the shapes of css" website
+_________________________________________________________________________________________________________________________________
+
+Shadows:
+
+Examples:
+box-shadow: 30px 10px 10px black;
+- shadow right(px), shadow down(px), shadow smoothness(px), color
+
+text-shadow: 10px, 10px, 15px, rgba(0, 0, 0, 0.4);
+- same as above
+-its better to use rgba here as the shadown can mess with the colors the text is on top off, changing opacity helps
+to correct this 
+_________________________________________________________________________________________________________________________________

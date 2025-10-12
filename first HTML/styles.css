@@ -1,0 +1,60 @@
+p {
+    color: blue; font-weight: bold;
+}
+
+body {
+    margin: 10px;
+    color: rgba(255, 40, 30, 1);
+}
+
+#solidbox {
+    width: 300px;
+    height: 300px;
+    float: inline-start;
+    background-color: hsl(269deg, 64%, 61%, 0.5) 
+}
+
+#gradientbox {
+    height: 300px;
+    width: 300px;
+    background: linear-gradient(50deg, black, red);
+    float: inline-start
+}
+
+#radgradbox {
+    height: 300px;
+    width: 300px;
+    float: inline-start;
+    background: radial-gradient(circle at top, pink, yellow);
+}
+
+#pickygradbox {
+    height: 300px;
+    width: 300px;
+    float: inline-start;
+    background: linear-gradient(to left, green, orange);
+}
+
+#borderprac {
+    height: 200px;
+    width: 200px;
+    border: 5px, dotted, blueviolet;
+    border-radius: 100%;
+    float: inline-start;
+    margin-left: 25px;
+    margin-bottom: 75px;
+}
+
+#shadowbox {
+    height: 200px;
+    width: 200px;
+    background: purple;
+    box-shadow: 30px 10px 20px black;
+    float: inline-start;
+}
+
+#shadowtext {
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    font-size: 35px;
+    color: initial;
+}
