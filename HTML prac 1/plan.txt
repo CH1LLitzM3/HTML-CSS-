@@ -1,0 +1,7 @@
+home page:
+- h1 header for a title to the site w background
+- background image to cover whole site background
+- 3 even chunks with a hyperlink to a group of topics, with a breif description of what each link leads to
+- each chunk will contain:
+1. images, videos, image href, video controls
+2. css examples of gradients and general customization

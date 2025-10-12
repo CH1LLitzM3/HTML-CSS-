@@ -1,0 +1,74 @@
+h1 {
+    padding: 30px;
+    color: white;
+    text-shadow: 5px 5px 10px black;
+}
+
+#back1 {
+    height: 120px;
+    width: 500px;
+    background-color: rgba(92, 92, 92, 0.7);
+    margin: 100px 0px 30px 50px;
+    padding: 25px;
+    box-shadow: 15px 15px 20px black;
+    border-radius: 35px;
+}
+
+.links {
+    font-size: x-large;
+    color: white;
+    text-shadow: 5px 5px 10px black;
+}
+
+.text {
+    color: rgb(210, 210, 210);
+    font-size: large;
+}
+
+a:visited {
+    color: rgb(87, 172, 242);
+}
+
+#back2 {
+    height: 120px;
+    width: 500px;
+    background-color: rgba(92, 92, 92, 0.7);
+    margin: 100px 0px 0px 50px;
+    padding: 25px;
+    box-shadow: 15px 15px 20px black;
+    border-radius: 35px; 
+}
+
+nav {
+    font-size: x-large;
+    padding: 30px;
+    border-radius: 30px;
+    background-color: rgba(100, 100, 100, 0.71);
+    margin: 15px;
+    text-align: center;
+    box-shadow: 5px 5px 10px black;
+}
+
+.navlinks { 
+    margin: 0px 75px;
+    font-size: x-large;
+    color: white;
+    text-shadow: 5px 5px 10px black;
+}
+
+#kitty1 {
+    height: 250px;
+    width: 300px;
+    object-fit: cover;
+    float: inline-start;
+}
+
+.eg1 {
+    margin: 0px 15px;
+    color: black;
+    font-size: large;
+}
+
+.simpback {
+    background: rgba(red, rgba(0, 0, 0, 0.605), blue, alpha);
+}
