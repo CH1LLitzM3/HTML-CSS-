@@ -1,0 +1,179 @@
+<div> is a block element and will take a whole line
+<span> is an inline element and will only take up the space needed
+
+height and width can be adjusted for block level elements, but not for inline elements
+unless:
+
+We use the display: function to change what type of element something is
+for example:
+- display: inline; - will set the element to an inline and vice versa for block
+
+- display: inline-block; - this will make an element inline, but will be able to be adjusted with height and width just
+like a block element
+_______________________________________________________________________________________________________________________________
+
+Overflow:
+
+-this is where there is too much content withing a fixed size element, resulting in the content *overflowing* out of the
+element, to correct this we use:
+Overflow: auto - will be handled by the browser
+Overflow: hidden - will not show overflow
+Overflow: scroll - will provide a scroll bar for either direction of overflow
+Overflow: hidden auto - overflow is (x) (y), so this will hide horizontal overflow and scroll for vertical
+_______________________________________________________________________________________________________________________________
+
+measurement units:
+- there are two types
+
+Fixed:
+px - pixels
+
+relative:
+% - a percantage of the parent element
+
+vh or vw - a percantage of the viewport(screen) width or height
+
+em - a multiple to times the default font size by, for example the default font size is 16px, so 10em=160px
+
+rem - a multiple to times the relative font size by, works the same as em but if a user changes the font size on their
+browser the scale will still be correct
+
+- its better to use relative measurement wherever possible as it makes your site still look correct on different sized
+screens like phones or TVs
+- its better to use fixed measurement when it wont make a difference or you need the size of something to always be 
+a specific amount, like a border thickness
+_______________________________________________________________________________________________________________________________
+
+Positioning:
+-there are two types
+
+absolute - this will move the element independently, if there are other elements with the same parent then it will
+effectively pretend it doesnt exist. This lets you moved something and allow the other elements to reorganise themselves
+
+relative - The element is still seen by the parent and will not adjust the position of other elements, it will effectively
+pretend its still exactly where it should be even after you have moved it 
+
+-directions determine where the space will be, so left: 5rem will move something 5rem to the right and vice versa
+_______________________________________________________________________________________________________________________________
+
+Floats:
+
+- using float will push a chosen element to a side of your choice within the container, this will also
+make the parent ignore this chosen element
+
+- this can help to move multiple block level elements next to eachother as intended, for example a profile
+picture with a username next to it
+
+- Problem is this can break your layout as the float must be cleared if there is not enough content already
+
+For example:
+- create a class called clearfix as it is good practice
+
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both
+}
+
+- clearfix::after will do this immediately after your content
+- content is blank simply to create the space
+- display block is to force the content to take a whole line
+- clear: both is what makes your element ignore the floating one, as in back to normal
+
+This way is the most common practice however this should be avoided for creating layouts due to better
+methods, however loads of websites still do it like this
+_______________________________________________________________________________________________________________________________
+
+Flex:
+
+-the correct and easiest way to create structured visual layouts for your site
+-a lot of this will be learned by messing around with it but the basics are:
+
+display:flex - will enable all elements inside your container with flex
+
+flex-direction: column - will lay items out vertically
+flex-direction: row - the default, and will lay items out horizontally
+
+axes:
+main - is the main direction youve decided so for row, the main direction is across
+cross - is the secondary direction so for row, the cross direction is vertical
+
+we do this using:
+justify-content - (main axis)
+align-items - (cross axis)
+
+-its handy for changing the position of things without messing with the order
+-its also super useful for deciding layout using center, space-evenly etc etc
+
+flexwrap:
+- items will shrink themselves so that more can fit on the same line, to avoid this use:
+
+flex-wrap: wrap - the default is nowrap
+
+align-content - will ensure that when multiple lines are created, they can all be adjusted
+to be correctly centred as an example
+
+sizing:
+Examples:
+
+flex-basis - will override the size of a chosen item based on direction chosen
+flex-grow - the rate an item can increase in size, 0 means nothing
+flex-shrink - the rate of shrinkage, 0 means no shrink#
+
+- these should be used on the items themselves and not the container
+
+flex (grow) (shrink) (basis) - a shorter way to write the above
+flex (grow) (basis) - esnure basis contains a measurement unit 
+_______________________________________________________________________________________________________________________________
+
+Grids:
+
+Also super useful for creating layouts for your site, these are easy to place content within cells and 
+label them clearly
+
+Examples:
+
+display: grid; - enables a grid, must be done within your container/the parent 
+
+grid-template-columns: repeat(2, 150px) - this will create 2 colums, at 150px each
+grid-template-rows: does the same but with rows
+grid-template: 4rem auto 4rem / 30fr 70fr - this is a shorter way to write it, and fr ensures you use the remaining space
+and stay within the viewport
+
+For items:
+
+grid-column: 1 / 3; - will place chosen item from the 1st column across to the 3rd colums
+
+grid-row: 2; - will place chose item in the second row, regardless of order.
+-this means if item c is placed in row 2, item b and d may move elsewhere
+_______________________________________________________________________________________________________________________________
+
+hiding element:
+-you can hide an element by setting the display to hidden or invisible, hidden will pretend it never existed
+whilst invis will just not show it but still know its there
+_______________________________________________________________________________________________________________________________
+
+Media queries:
+
+-these are super important for ensuring your website will look exactly as intended across different devices.
+it also allows you to account for a mobile having a much smaller screen than a desktop, and change the layout
+if a smaller screen is detected
+
+Example:
+
+@media screen and (min-width: 600px) {
+    .container {
+        flex-direction: row;
+    }
+}
+
+- this is asking if the screen in use has a minimum width of 600px, if it does then it will display 
+chosen content in a row layout, instead of a column for example
+- these media queries can override any previous style applied to a class/id and is perfect for changing
+an entire layout for a different type of devices
+
+- it is good practice to design you website in favour of a mobile user, as it is easier to use the extra space
+from a desktop afterwards rather than the other way around. this is because you have extra room to place and style
+content whereas on mobile you are limited and may not be able to fit the needed features from a desktop layout
+
+_______________________________________________________________________________________________________________________________

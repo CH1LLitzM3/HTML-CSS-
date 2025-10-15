@@ -1,0 +1,145 @@
+
+Typography:
+
+-3 types of fonts
+Serif - the font with the little lines at the edge of the letters (posh font)
+sans-serif - similar to serif but without the extra little lines (more chill)
+monospace - each letter takes the same amount of space (coding font)
+
+font-family: roboto, helvetica, sans-serif;
+
+- this sets the font, if it cannot apply the first one, it will try the 
+next and so on. this makes your font choice more likely to work with different browsers/devices and still
+keep the intended vibe
+
+font-weight: 700; 
+- this sets the thickness of your font, higher numbers are thicker and vice versa
+
+- it is worth noting that it is best practice to avoid using black as your font color, change it to any shade 
+lighter of your choice as it is easier on the eyes
+
+font-style: italic;
+- this will simply change the style of your font
+
+font-size: 1rem;
+- this sets the size of your font
+
+- its best practice to set an overall font style onto your body or more general elements, and then
+making use of inheritance to change specifics such as a header
+
+_______________________________________________________________________________________________________________________________
+
+uploading custom web fonts:
+
+3 options for sites:
+fontsquirrel.com
+myfonts.com
+fonts.com
+
+- Fonts need to be in the correct format for websites, the best will be .woff or .woff2
+- not all browsers support woff2 so its good practice to upload both woff and woff2 variants to your site
+
+how to:
+1. choose font and download
+2. use generator feature on fontsquirrel.com(as an example) and upload both the regular and bold versions
+3. uncompress file and copy both the woff,woff2 versions of the regular and bold font into a fonts folder on your file
+4. you will also be given a stylesheet.css file to copy into this folder, you will need to include the path for each font
+for example styles/fonts/customfont-blah-blah.woff2 
+5. for regular, dont change font weight and style
+6. for bold, ensure font weight and style is changed to bold
+7. copy paste these 2 chunks into your style.css and ensure it is at the top of your file as it needs to be loaded first
+8. optional, but you can rename the font-family to whatver you like for ease of use
+9. then use the same way as any other font
+_______________________________________________________________________________________________________________________________
+
+FOUT:
+
+- this is when the user experiences a delay in downloading a custom font, typically as a result of a slow network
+- hard to avoid entirely but there are ways to make it less jarring
+within your @font-face:
+
+display: auto/swap - this will replace the fallback font with the custom one when downloaded, can be jarring as it can
+shift elements around and is just annoying for a user with slow connection
+
+display: block - does not show text until font is downloaded, bad practice to use and can often break sites for a 
+user with slow connection
+
+display: fallback - will use the fallback and if the custom font takes too long to download, it just sticks with
+the fallback
+
+display: optional - same as fallback, but will cache the font for the next time user loads the page, a bit weird to
+use as site will look different compared to the first use, try to avoid
+_______________________________________________________________________________________________________________________________
+
+Google web fonts:
+- amazing and popular fonts, for my use case just use these its quicker, easier, more reliable and google has done
+most of the work for me
+
+fonts.google.com
+
+1. choose font, select the weights and amount of fonts you need
+2. top right to view selection when im done, or to tweak whats in my "basket"7
+3. will give me a <link>, copy and paste it above any other links on my html
+4. you can modify the url itself to add/remove fonts and weights, aswell as the display(swap,optional etc)
+
+-**this site will also state the liscencing for the fonts, ALWAYS CHECK THEY ARE FREE TO USE**
+_______________________________________________________________________________________________________________________________
+
+system fonts:
+- pure performance and more familiar to the user as its what their OS uses, it also avoid FOUTs
+
+to use:
+font-family: -apple-system (and just tab it in) - this will select all current OS fonts for each platform
+_______________________________________________________________________________________________________________________________
+
+veritcal spacing:
+- its good practice to use spacing to make sure our different pieces of content dont look connected, so we use spacing
+so that a user will naturally perceive them as 2 different things
+
+on your text element (so a h1 or body etc etc):
+
+margin: (above)rem 0 (below)rem - use a larger margin above, and a smaller margin below
+
+line-height: 1.5rem - changes the space between each line, it is good practice to apply this to the body
+and to use 1.5rem, but for specific design it can be any number
+
+- for the sake of future proofing, just use 1.5 as it will be your base font size x1.5, if you were to change your 
+font size otherwise you will also have to change line height.
+_______________________________________________________________________________________________________________________________
+
+horizontal spacing:
+- this is used for when different fonts dont look right on your site
+
+letter-spacing: px; - this can be posotive, negative or 0 based on preference
+
+word-spacing: px; - same again
+
+width: 50ch; - this will state the amount of characters per line, its best practice to land somewhere between
+50-70 characters for a user. 50ch is 50 zeros of space and is best practice to use, but tweak it slightly for the 
+sake of design preference
+_______________________________________________________________________________________________________________________________
+
+Text formatting:
+- super useful for correctly structuring your text in the need of your design
+
+examples:
+text-align: ; - states where text goes along the line, so left, right, or centred
+text-indent: ; - will add an indent to the first line of content
+p + p text-indent: ; - an example of indenting the first line after following paragraphs, you might not want an indent after a heading
+text-decoration: ; - to set underline or line-through
+text-tranform: ; - use for lowercase, uppercase, capitalise
+
+(with a set width for lines)
+white-space: nowrap; - will force all text onto 1 line
+- this will likely cause overflow and look bad so to fix:
+overflow: hidden;
+- but now its unclear why the text suddenly gets cut of so:
+tex-overflow: ellipsis; 
+- this will now cut off the text, preventing overflow AND display a ... to the end of the text
+
+column-count: ; - this will split text into multiple columns
+column-gap: ; - this will state the gap between each column
+column-rule: px solid black; - this will set a border between each column
+
+direction: ; - will set the reading direction, good for languages but likely not useful to me
+_______________________________________________________________________________________________________________________________
