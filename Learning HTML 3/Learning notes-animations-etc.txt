@@ -1,0 +1,104 @@
+
+Transformations:
+
+-these are added within your styles.css
+
+4 types:
+scale() - will change the size of the desired element
+skew() - will stretch the top and bottom different directions
+rotate() - will rotate desired element
+tranlate() - will move the desired element by a given amount by Xrem/px and Yrem/px
+
+- the order does matter, so if you rotate something by 45deg then translate it 100px right, itll actually go 100px
+diagonally down in the direction it was rotated
+
+________________________________________________________________________________________________________________________________
+
+Transformations in 3d:
+
+- there is a Z axis, but for it to be affected by 3d transitions you need to set a perspective, which is just a 
+fake distance for the sake of having a point to move along the z axis from
+
+example:
+
+.box:hover {
+    transform: perspective: 200px, rotateY(45deg);
+}
+
+- this simple rotates the box along its y axis, so it will go 'into' the screen
+
+.container:hover .box {
+    transform: perspective: 100px, translateY(100px);
+}
+
+- this will make anything with the class .box WITHIN the .container, be pushed deeper into the screen so it would
+appear smaller 
+
+________________________________________________________________________________________________________________________________
+
+Transitions +:
+
+- when transforming elements, remember to put the transition on the .class, not the .class:hover for example
+- these are mostly the same, except you will need to specify what function is gaining a transition:
+
+.box {
+    height: 5rem;
+    width: 5rem;
+    background-color: rgb(52, 226, 43);
+    margin: 2rem;
+    padding: 0.5rem;
+    transition: translate 1s ease-in, background-color 0.5s;
+}
+
+.box:hover {
+    background-color: cadetblue;
+    transform: translate(4rem);
+}
+
+- this will simple change the color from green to blue in 0.5s
+- the box will also move to the right over 1s, ease-in is a type of animation, and you could add another 0.5s 
+which would delay the start of the transition
+
+________________________________________________________________________________________________________________________________
+
+Animations:
+
+- you can create custom animations containing keyframes. which effectively lay out the steps of the animation
+Example:
+
+@keyframe animation1 {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.3) rotate(45deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(0);
+    }
+}
+
+- this animation will simply increase the size and rotate the element to the right, then it will return to its origional
+size and rotate back to its origional position
+
+- to edit timings and animation settings you can use the animation: function to edit the timing, duration, looping etc etc
+- remember to use animation: on your element, not your keyframe 
+- the animation: will lay out each setting, so simply use what vscode shows you and dont worry about memorizing
+
+________________________________________________________________________________________________________________________________
+
+Reusing Animations:
+
+- it can be awkward to use an individual animation setting for each element affected, so you can simply outline them
+within a class:
+
+.animation-animation1 {
+    animation: name duration timing-function delay iteration-count direction fill-mode;
+}
+
+- for premade animations to save time, use animate.style (website)
+- simply inject the <link> into your <head> and read the documentation for the classes
+
+________________________________________________________________________________________________________________________________

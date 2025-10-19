@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="normalize.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css"
+    />
+    <link rel="stylesheet" href="Styles-Forms-W-milligram.css" />
+  </head>
+  <body>
+    <div class="container1">
+      <form>
+        <input type="date" autofocus />
+        <input type="number" value="17593" />
+        <input type="password" placeholder="password" />
+        <input type="text" disabled />
+        <textarea>blahblah..</textarea>
+        <input type="text" maxlength="5" />
+      </form>
+    </div>
+    <div class="container2">
+      <form>
+        <input type="text" list="countries" />
+        <datalist id="countries">
+          <option data-value="1">United Kingdom</option>
+          <option data-value="2">Ireland</option>
+        </datalist>
+      </form>
+    </div>
+    <div class="container3">
+      <select>
+        <optgroup label="games">
+          <option value="">Choose a game...</option>
+          <option value="1">Warframe</option>
+          <option value="2">Minecraft</option>
+        </optgroup>
+      </select>
+      <select multiple>
+        <optgroup label="devices">
+          <option value="1.1">desktop</option>
+          <option value="1.2">mobile</option>
+          <option value="1.3">tablet</option>
+        </optgroup>
+      </select>
+    </div>
+    <div class="container4">
+      <div>
+        <input type="checkbox" id="burger" />
+        <label class="label-inline" for="burger">burger</label>
+      </div>
+      <div>
+        <input type="checkbox" id="chips" />
+        <label class="label-inline" for="chips">chips</label>
+      </div>
+    </div>
+    <div class="container5">
+      <div>
+        <input type="radio" name="gender" id="male" />
+        <label class="label-inline" for="male">Male</label>
+      </div>
+      <div>
+        <input type="radio" name="gender" id="female" />
+        <label class="label-inline" for="female">Female</label>
+      </div>
+    </div>
+    <div class="container6">
+      <input type="range" min="0" max="100" />
+    </div>
+    <div class="container7">
+      <input type="file" />
+      <input type="file" accept="video/*" />
+      <input type="file" accept=".jpg, .png" />
+    </div>
+    <div class="container8">
+      <form action="https://formspree.io/f/mvgwyzzv" method="POST">
+        <input type="text" placeholder="name" name="name" />
+        <input type="text" placeholder="email" name="email" />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,160 @@
+
+Images:
+
+-two types of image:
+
+Raster - usually from cameras and sensors (JPG, PNG etc)
+- typically large file sizes so can be slow, but cant simply use lower res as will look bad when enlarged
+- For my use case, stick to PNG as they can be transparent, have 16M colour and can be animated
+- if no transparency or animations needed, JPEG acceptable
+
+Vector - made using maths and software like adobe illustrator (SVG format)
+- look high quality at any size, easy to scale up or down
+
+________________________________________________________________________________________________________________________________
+
+Background images:
+
+background: url(/images/kitty.jpg); - selects the image as a background
+background-repeat: no-repeat; - image will repeat along x and y axis to fill the vp, you can choose either no repeat or x/y
+background-position: 20rem 50rem; - images starts at top left of element, this will move it to the right(rem/px/etc)
+and then down(rem/px/etc)
+background-size: width height; - be careful as if height is 100% it will only cover content when added, so use:
+
+body {
+    height: 100vh;
+    background-size: 100% 100%;
+}
+
+- you could also use background: cover; if needed. however as vh increases the image gets stretched more and more and
+you can lose quality as you add content
+
+background-attatchment: fixed; - this ensures the background stays in place and does not need to stretch to cover
+the extra vh added from more content, it helps maintain quality of the background image.
+
+________________________________________________________________________________________________________________________________
+
+CSS sprites:
+
+- say you have 50 icons and logos on a page, thats 50 individual requests to download each one, this is expensive on 
+a server and can take ages when it doesnt have to
+- sprites are simply a combination of all 50 images into 1 file that gets downloaded from a server instead, which
+makes it way quicker and if you had loads of users, it means your server would be under less load due to avoiding all 
+these requests
+
+For icons, use flaticon.com 
+For creating sprites, use cssspritetool.com or sprite generator
+
+1. upload desired images to sprite generator
+2. modify prefix to something- so its easy to label
+3. move the combined.jpg/png into your images folder
+4. copy and paste your sprites.css into your styles.css
+5. fix the new path as it has changed
+6. use <span> elements with the class of the image you need to implement it onto your page
+
+- sprites are best used for logos and icons, as large images can create a huge file size which is too slow to download
+all at once like that
+- sprites are also hard to change as you will need to make a new sprite to add/remove images from it
+
+________________________________________________________________________________________________________________________________
+
+Data URLs / URIs:
+
+use cssportal.com/image-data/ or URI generator
+
+________________________________________________________________________________________________________________________________
+
+Clipping:
+
+- used to make custom shapes out of a provided image
+
+use bennettfeely.com/clippy/ 
+
+1. copy style path the site generates when your happy with it
+2. paste to styles.css and give it a clear class 
+3. insert img.class 
+
+- super useful for creating custom content for your site without needing skills in photoshop and things like that
+- for me, a perfect alternative to stick to creating through code 
+
+________________________________________________________________________________________________________________________________
+
+Filters:
+
+- used to modify images seperately, so you could have 1 image in a file, but both look rather different
+
+.example {
+    filter: grayscale(90%);
+}
+
+- simply search up css filters to see all available
+- use can use pseudo selectors like :hover, :visited etc to customise your site more
+
+- Filters are not compatible with internet explorer and opera mini, but for me I could tottaly use them anyways as it has
+super high compatillity, and keeps my styling in code rather than learning photoshop
+
+________________________________________________________________________________________________________________________________
+
+High density screens:
+
+- new tech can fit more pixels in the same area as old tech would, this doesnt mess up the sizing BUT the new tech
+will "stretch" the image to fit the equivalent size, which is what messes the quality
+- for images that need to maintain quality or you simply want to have a high quality site
+using photoshop:
+
+1. select image
+2. select image size
+3. create 2 new images, that are 2x and 3x the pixels of the origional
+4. save the origional as normal, the 2x as imagename@2x, and the same with 3x so imagename@3x
+5. store all 3 within your images folder as normal
+
+then when adding the image, within your <img> add:
+
+srcset="/cat.jpg 1x, /cat@2x.jpg 2x, /cat@3x.jpx 3x"
+
+- this can only be used for images with a set width
+
+________________________________________________________________________________________________________________________________
+
+Resolution switching:
+
+- if your image size is relative (rem, vh etc), using different devices can massively change the design of your site
+due to screen size
+- we use resolution switching to tell the browser, based on the screen detected, to adjust the size of the image 
+as needed
+- remember to change your srcset from 1x,2x,3x to 900w, 130w, 1839w as desired
+
+For example WITHIN your <img> add:
+
+sizes="
+        (max-width: 300px) 100vw,
+        (max-width: 600px) 50vw,
+        33vw
+
+- for phone sized screens this would make the image cover 100% of screen width, then half, and anything larger so
+typically a desktop it would cover 33% of the screen width
+
+________________________________________________________________________________________________________________________________
+
+SVGs:
+
+- for me, SUPER useful for implementing logos, icon, backgrounds and decorative images to my site as they are tiny
+and look high quality regardless of size
+
+For creating backgrounds use svgbackgrounds.com
+
+________________________________________________________________________________________________________________________________
+
+Font Icons:
+
+- a super easy way to include icons within your site without adding them as images,svgs etc
+
+using fontawesome.com :
+
+1. create a kit, then copy paste provided code into <head>
+2. select icons you want to use and paste provided code
+3. optional, but better practice to convert the icon from <i> to <span>
+4. include an additional class of choice so that you can style the icon(s) as desired
+
+________________________________________________________________________________________________________________________________
+

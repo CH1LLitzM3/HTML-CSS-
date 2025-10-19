@@ -1,0 +1,74 @@
+body {
+    padding: 1rem 2rem;
+    height: 200vh;
+}
+
+form {
+    width: 30vw;
+    padding: 1rem;
+}
+
+input {
+    margin-bottom: 2rem;
+}
+
+textarea {
+    resize: none;
+}
+
+.container1 {
+    width: 40vw;
+    background-color: rgba(170, 1, 69, 0.804);
+    border: 2px solid black;
+    margin-bottom: 2rem;
+}
+
+.container2 {
+    width: 40vw;
+    background-color:rgba(0, 132, 255, 0.741);
+    border: 2px solid black;
+    margin-bottom: 2rem;
+}
+
+.container3 {
+    width: 40vw;
+    background-color: rgba(147, 57, 6, 0.816);
+    border: 2px solid black;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.container4 {
+    width: 40vw;
+    background-color: rgb(59, 1, 68);
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+.container5 {
+    width: 40vw;
+    background-color: rgba(100, 138, 128, 0.8);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.container6 {
+    width: 40vw;
+    background-color: rgba(100, 138, 128, 0.8);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.container7 {
+    width: 45vw;
+    background-color: rgba(100, 138, 128, 0.8);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.container8 {
+    width: 40vw;
+    background-color: rgba(100, 138, 128, 0.8);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}

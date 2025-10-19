@@ -1,0 +1,21 @@
+
+CSS variables:
+
+- to avoid repeating yourself, you can create premade style variables to call on later on
+For example:
+
+:root {
+    --color-primary: rgb(0, 0, 0);
+    --color-secondary: rgb(123, 54, 134);
+    --border-size: 2px;
+    --border-radius: 10px;
+}
+
+.container {
+    background: var(--color-primary);
+    border: var(--border-size) white;
+}
+
+- so this will simply give the container the primary color (black) and add a 2px border, which I have made white
+
+________________________________________________________________________________________________________________________________

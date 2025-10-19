@@ -1,0 +1,181 @@
+
+Basic Forms:
+
+- you can use <input> to request a user input of your choice
+Example:
+
+<form>
+    <label> for="name">Name</label>
+    <input id="name" type="text" />
+<form>
+
+- this will simply present a box for a user to type their name, with a label next to it saying "Name" just to show what the
+type of input should be
+
+- it is good practice to wrap these forms within a <div> especially if you have multiple so that you can style them 
+as desired and have them fit together nicely, otherwise these are inline elements and will just travel across the vp
+
+- the id="" in the <input> is FOR the for="name" 
+
+Example:
+
+<button type="submit">Enter</button>
+
+- this will provide a button that will submit the user's input, you can also replace "submit" with "reset" to clear 
+any current entries inside the inputs
+________________________________________________________________________________________________________________________________
+
+Styling Forms:
+
+- some forms have different fields, like inputs have 'text' or 'email', to ensure you style both use square brackets
+Example:
+
+input[type='text'], input[type='email'] {
+
+}
+
+- Transitions make your site look super smooth, to do so:
+
+transition: box-shadow 0.3s; - simply makes the shadow take 0.3 seconds to appear and dissapear, however you can obv add
+a transition to more or less anthing
+________________________________________________________________________________________________________________________________
+
+Using a CSS framework:
+
+- 2 main options but there are loads you can use:
+
+Bootstrap.com :
+1. copy <link> and place it withing your <head>
+2. use website to view what classes have what function you need
+3. simple chuck in what you need, using the site to help offer you the code 
+
+- downside, its pretty big for something you might not make full use of and can make users with slow connection
+have a poor experience. However given the functionality it adds it isnt a huge deal and can be worth keeping
+- given its functionality, there is a load to learn so it may be better returning to this after learning more
+useful things
+
+Milligram.io :
+1. copy <link> and place into <head>
+2. explore site to view classes and their functions
+
+- this is tiny especially compared to Bootstrap, and overall simpler to use. This also will offer a better experience
+for a user with slow connection due to the reduced filesize
+
+________________________________________________________________________________________________________________________________
+
+Text Fields:
+
+- two main types, input and textarea
+- as we will use milligram, most of the styling is done for us but we can always modify it or style it ourselves if
+no longer using milligram
+- you can add attributes to these fields to add/remove function 
+
+For example:
+value - will populate the field with premade text
+placeholder - will populate field with text that dissapears once user focuses
+disable - will not send any information to a server about this field
+readonly - wont allow user input
+maxlength - will only allow user to type specified number of characters
+(withing your styles) resize: none; - will prevent the user from resizing text areas, default is to allow this
+
+________________________________________________________________________________________________________________________________
+
+Data Lists:
+
+- used for offering suggestions to user input, and can also store a value based on what the input is
+- make sure you link your datalist with your input using an id='' in your datalist, and list='' in your input
+
+________________________________________________________________________________________________________________________________
+
+Drop Down Lists:
+
+- a good way to make a user select a premade option, which could then supply a value to a server
+- simply add 'multiple' to your <select> to make it multiple choice
+- using <optgroup> is a good way to organize the options you provide into sections, almost like a title for them
+
+________________________________________________________________________________________________________________________________
+
+Checkboxes:
+
+- another way to offer multiple premade options for a user to select, which will also supply a value to a 
+server like the above
+- very simple to use, just remember to link your label and input using the id='' and for=''
+
+________________________________________________________________________________________________________________________________
+
+radio buttons:
+
+- used to offer multiple choice to a user but allow only one option, its effectively like a drop down list but for
+check boxes
+- note that your name='' is used to group radios together similar to a class, this means you can have multiple
+different radio inputs for seperate things 
+
+________________________________________________________________________________________________________________________________
+
+Sliders:
+
+- super simple, simply use type='range' and provide a min='' and max='' value
+- for more functionality I will need java
+
+________________________________________________________________________________________________________________________________
+
+File inputs:
+
+- simply use type='file'
+- to specify a specific type of input, use accept='' with .jpg, or audio/* etc etc
+
+________________________________________________________________________________________________________________________________
+
+grouping fields:
+
+- mostly a design preference as they do the same thing but:
+
+<fieldset> for containing that chunk, with a <legend> as a heading for the fields
+
+or
+
+<section> for containing, then a <h> of your choice (typically a <h2> is used)
+
+________________________________________________________________________________________________________________________________
+
+hidden fields:
+
+input type='hidden'
+- these are used to store information of an element that wont be seen by the user, but WILL be seen by a server
+- great for checking elements or seeing what element is being edited for the server
+- DO NOT STORE SENSETIVE DATA WITHIN A HIDDEN FIELD, it is still visible by a user if they view source code
+
+________________________________________________________________________________________________________________________________
+
+Data Validation:
+
+- when implementing user inputs, you should always restrict what they can actually enter in line with what input 
+you are asking for
+- if a user is to enter a giant string of characters or negative number values, it can break the site or cause
+data corruption, in other words they can do more than what they should be allowed to do
+
+simply:
+on your input, include min='' and max='' for numbers, or minlength='' and maxlength='' for characters
+
+for required fields, simply add 'required' inside your input (without the '' ofc)
+
+________________________________________________________________________________________________________________________________
+
+Submitting a form:
+
+- used to send information to a server, usually from user input
+example:
+
+      <form action="https://formspree.io/f/mvgwyzzv" method="POST">
+        <input type="text" placeholder="name" name="name" />
+        <input type="text" placeholder="email" name="email" />
+        <button type="submit">Submit</button>
+      </form>
+
+- the action is the url that the information will be sent to, this in future could be my personal server etc etc
+- the method can be POST or GET, GET is used to bookmark the url so that you can return to it when needed
+- the name='' for email and name is mainly good practice to keep track of what each form submitted was meant to be
+
+- while I do not have a server or the backend to do this myself, use formspree.io for now as proof of functionality
+
+________________________________________________________________________________________________________________________________
